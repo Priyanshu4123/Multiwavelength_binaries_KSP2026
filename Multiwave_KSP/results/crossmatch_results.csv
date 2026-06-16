@@ -1,0 +1,453 @@
+source_name,ra,dec,maxi_found,n_maxi_bands,swift_match,swift_sep_arcsec,n_swift_bands,n_xray_bands,has_outburst,ztf_found,ztf_oid,n_ztf_bands,atlas_found,n_atlas_bands,n_optical_bands,classification
+1A 0535+262,84.727,26.316,True,2,,,0,2,True,False,,0,,0,0,Bronze
+1A 0620-00,95.685,-0.346,True,2,,,0,2,True,True,ZTF18acszzdo,2,False,0,2,Gold
+1A 1246-588,192.415,-59.087,True,2,4U 1246-58,1.8494493393129188,0,2,True,False,,0,False,0,0,Bronze
+1A 1742-294,266.523,-29.515,True,2,1A 1742-294,3.1328162998357967,0,2,True,False,,0,,0,0,Bronze
+1A 1744-361,267.055,-36.133,True,2,,,0,2,True,False,,0,,0,0,Bronze
+1E 1145.1-6141,176.869,-61.954,True,2,1E 1145.1-6141,0.0,0,2,True,False,,0,False,0,0,Bronze
+1E 1547.0-5408,237.725,-54.307,True,2,1E 1547.0-5408,2.1003911722072997,0,2,True,False,,0,False,0,0,Bronze
+1E 1841-045,280.331,-4.936,True,2,Kes 73,0.0,0,2,True,False,,0,,0,0,Bronze
+1ES 0033+595,8.969,59.835,True,2,QSO B0033+595,1.5325828142300455,0,2,True,True,ZTF19abgzjrh,2,False,0,2,Gold
+1ES 0120+340,20.786,34.347,True,2,1ES 0120+34.0,3.600000000001636,0,2,True,True,ZTF19acymgje,2,False,0,2,Gold
+1ES 0414+009,64.218,1.09,True,2,,,0,2,True,True,ZTF18acrvucs,3,False,0,3,Gold
+1ES 0502+675,76.985,67.623,True,2,QSO B0502+675,1.211167593824794,0,2,True,True,ZTF18abvfkym,2,False,0,2,Gold
+1ES 0647+25.0,102.694,25.05,True,2,QSO B0647+250,0.0,0,2,True,True,ZTF17aadptpa,3,False,0,3,Gold
+1ES 1011+496,153.767,49.434,True,2,QSO B1011+496,1.7999999999952545,0,2,True,True,ZTF21aallzke,2,False,0,2,Gold
+1ES 1101-232,165.906,-23.492,True,2,1A 1059-22,3.4737727955454902,0,2,True,True,ZTF23aabpgop,2,False,0,2,Gold
+1ES 1218+304,185.341,30.177,True,2,QSO B1218+304,0.0,0,2,True,True,ZTF18aajmiqk,2,False,0,2,Gold
+1ES 1426+428,217.136,42.672,True,2,H 1426+428,3.6000000000130865,0,2,True,True,ZTF21aaqpvak,2,False,0,2,Gold
+1ES 1959+650,299.999,65.149,True,2,1ES 1959+650,0.0,0,2,True,True,ZTF19admoxqs,1,False,0,1,Silver
+1ES 2321+419,350.969,42.182,True,2,2E 2321.4+4154,0.3600000000381744,0,2,True,False,,0,,0,0,Bronze
+1H 0419-577,66.503,-57.2,True,2,1H 0419-577,2.2378275033233073,0,2,True,False,,0,False,0,0,Bronze
+1H 0918-548,140.112,-55.207,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+1H 1556-605,240.26,-60.738,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+1H 1934-063,294.388,-6.218,True,2,,,0,2,True,True,ZTF20abfmuzx,1,False,0,1,Silver
+1RXS J180408.9-342058,271.038,-34.349,True,2,1RXS J180408.9-342058,1.4400000000148137,0,2,True,False,,0,,0,0,Bronze
+1RXS J213623.1-622400,324.096,-62.4,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+2FGL J1931.1+0938,292.791,9.618,True,2,,,0,2,True,False,,0,,0,0,Bronze
+2MASX J00341665-7905204,8.569,-79.089,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+2MASX J09594263-3112581,149.928,-31.216,True,2,,,0,2,True,False,,0,,0,0,Bronze
+2MASX J11454045-1827149,176.419,-18.454,True,2,1A 1143-18,0.0,0,2,True,True,ZTF22aabaxbk,2,False,0,2,Gold
+2MASX J14104482-4228325,212.687,-42.476,True,2,,,0,2,True,False,,0,,0,0,Bronze
+2MASX J16115141-6037549,242.964,-60.632,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+2MASX J21383340+3205060,324.639,32.085,True,2,,,0,2,True,True,ZTF18abmjija,2,False,0,2,Gold
+2S 0921-63,140.647,-63.294,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+2S 1417-624,215.303,-62.698,True,2,H 1417-624,4.953750185747037,0,2,True,False,,0,False,0,0,Bronze
+3C 111,64.589,38.027,True,2,3C 111,0.0,0,2,True,True,ZTF18accjszy,2,False,0,2,Gold
+3C 120,68.296,5.354,True,2,3C 120,0.0,0,2,True,True,ZTF19abwudrd,1,False,0,1,Silver
+3C 129,72.288,45.011,True,2,,,0,2,True,False,,0,,0,0,Bronze
+3C 273,187.278,2.052,True,2,3C 273,0.0,0,2,True,True,ZTF20aaywnna,2,False,0,2,Gold
+3C 279,194.047,-5.789,True,2,3C 279,0.0,0,2,True,True,ZTF21abbytqq,1,False,0,1,Silver
+3C 382,278.764,32.696,True,2,4C 32.55,1.4399999999804638,0,2,True,True,ZTF18aamieiy,3,False,0,3,Gold
+3C 390.3,280.537,79.771,True,2,3C 390.3,0.0,0,2,True,True,ZTF18abobryy,2,False,0,2,Gold
+3C 454.3,343.491,16.148,True,2,3C 454.3,3.45796737992833,1,3,True,True,ZTF18adnclbq,2,False,0,2,Gold
+3C 66A,35.665,43.035,True,2,3C 66A,1.8191318470073,0,2,True,True,ZTF19adnfizi,1,False,0,1,Silver
+4C +18.51,265.529,18.456,True,2,,,0,2,True,True,ZTF19acozpaa,2,False,0,2,Gold
+4C +74.26,310.655,75.134,True,2,4C 74.26,0.0,0,2,True,True,ZTF23aazjygo,1,False,0,1,Silver
+4C 09.57,267.887,9.65,True,2,4C 09.57,0.7199999999915704,0,2,True,True,ZTF24aawhboa,2,False,0,2,Gold
+4C 38.41,248.815,38.135,True,2,4C 38.41,1.4400000000033637,0,2,True,True,ZTF18aabtuel,3,False,0,3,Gold
+4C 4.42,185.594,4.221,True,2,4C 04.42,0.1799999999989811,0,2,True,True,ZTF21aautwzo,3,False,0,3,Gold
+4C 50.55,321.079,51.113,True,2,,,0,2,True,False,,0,,0,0,Bronze
+4U 0114+65,19.511,65.292,True,2,3A 0114+650,1.47111374868842,0,2,True,False,,0,,0,0,Bronze
+4U 0115+63,19.633,63.74,True,2,,,0,2,True,False,,0,,0,0,Bronze
+4U 0142+61,26.593,61.751,True,2,PSR J0146+61,0.770793788003232,0,2,True,False,,0,,0,0,Bronze
+4U 0513-40,78.528,-40.044,True,2,,,0,2,True,False,,0,,0,0,Bronze
+4U 0728-25,112.223,-26.108,True,2,4U 0728-25,0.3600000000152744,0,2,True,False,,0,False,0,0,Bronze
+4U 0923-31,141.05,-31.67,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1036-56,159.397,-56.799,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1210-64,183.45,-64.838,True,2,4U 1210-64,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1254-690,194.405,-69.289,True,2,H 1254-690,3.81850767836426,0,2,True,False,,0,False,0,0,Bronze
+4U 1323-619,201.65,-62.136,True,2,4U 1323-619,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1344-60,206.9,-60.618,True,2,1A 1343-60,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1538-52,235.597,-52.386,True,2,H 1538-522,0.0,1,3,True,False,,0,False,0,0,Bronze
+4U 1543-475,236.786,-47.669,True,2,4U 1543-47,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1543-624,236.978,-62.568,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1608-52,243.179,-52.423,True,2,H 1608-522,0.0,1,3,True,False,,0,False,0,0,Bronze
+4U 1624-490,247.012,-49.199,True,2,4U 1624-490,1.7999999999952545,0,2,True,False,,0,,0,0,Bronze
+4U 1626-67,248.07,-67.462,True,2,4U 1626-67,4.139597752839747,0,2,True,False,,0,False,0,0,Bronze
+4U 1630-472,248.502,-47.394,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1700+24,256.644,23.972,True,2,4U 1700+24,0.7199999999972952,0,2,True,False,,0,False,0,0,Bronze
+4U 1705-32,257.226,-32.333,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1705-440,257.227,-44.102,True,2,,,0,2,False,False,,0,False,0,0,Bronze
+4U 1708-40,258.099,-40.843,True,2,4U 1708-40,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1711-34,258.58,-34.049,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1730-22,263.49,-22.032,True,2,,,0,2,True,True,ZTF21abgbrck,2,False,0,2,Gold
+4U 1746-37,267.553,-37.052,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1755-338,269.667,-33.807,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1822-371,276.445,-37.105,True,2,4U 1822-371,1.0800000000158596,0,2,True,False,,0,False,0,0,Bronze
+4U 1850-086,283.27,-8.706,True,2,4U 1850-087,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1901+03,285.905,3.192,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1907+09,287.408,9.83,True,2,H 1907+097,0.0,0,2,True,True,ZTF25aaeumpl,1,False,0,1,Silver
+4U 1909+07,287.7,7.596,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1916-053,289.699,-5.236,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 1954+319,298.926,32.097,True,2,4U 1954+31,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 1957+115,299.851,11.71,True,2,4U 1957+115,3.6000000000073613,0,2,True,False,,0,False,0,0,Bronze
+4U 2129+47,322.859,47.29,True,2,XB 2129+470,0.0,0,2,True,False,,0,False,0,0,Bronze
+4U 2206+543,331.981,54.52,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+4U 2238+60,339.837,61.274,True,2,,,0,2,True,True,ZTF19acjufva,1,False,0,1,Silver
+ACO 3391,96.564,-53.681,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+AM Her,274.056,49.868,True,2,AM Her,2.3203826710626996,0,2,True,True,ZTF19aanvjhb,2,False,0,2,Gold
+AO Psc,343.825,-3.178,True,2,AO Psc,0.0,0,2,True,True,ZTF24aatszsw,1,False,0,1,Silver
+AP Lib,229.424,-24.372,True,2,QSO B1514-241,0.0,0,2,True,True,ZTF19aardope,3,False,0,3,Gold
+AR Psc,20.736,7.419,True,2,HD 8357,2.5727535054024826,1,3,True,False,,0,False,0,0,Bronze
+AT 2019wey,68.847,55.376,True,2,,,0,2,True,True,ZTF19acwrvzk,2,False,0,2,Gold
+AT Mic,310.463,-32.435,True,2,AT Mic,1.0799999999700596,1,3,True,False,,0,False,0,0,Bronze
+Abell 119,14.07,-1.25,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 1795,207.252,26.585,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 2029,227.745,5.762,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 2147,240.572,15.895,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 262,28.21,36.146,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 3266,67.822,-61.458,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 3395,96.88,-54.399,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 3667,303.13,-56.83,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 401,44.737,13.582,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 478,63.336,10.476,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 496,68.4,-13.3,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 644,124.352,-7.513,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Abell 754,137.15,-9.63,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Agl J2241+4454,340.739,44.722,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Algol,47.042,40.958,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Antares,247.352,-26.432,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Aql X-1,287.817,0.585,True,2,Aql X-1,0.0,1,3,True,True,ZTF18accedau,3,False,0,3,Gold
+Ark 120,79.048,-0.15,True,2,QSO B0513-002,0.937996739348214,0,2,True,False,,0,False,0,0,Bronze
+Ark 564,340.664,29.725,True,2,,,0,2,True,True,ZTF21aadlzpm,2,False,0,2,Gold
+BD +60 73,9.29,61.36,True,2,IGR J00370+6122,0.0,0,2,True,False,,0,False,0,0,Bronze
+BY Cam,85.703,60.859,True,2,BY Cam,1.422773075440369,0,2,True,True,ZTF22abzpezg,1,False,0,1,Silver
+BZ UMa,133.434,57.811,True,2,,,0,2,True,True,ZTF18aabjkzk,3,False,0,3,Gold
+Betelgeuse,88.793,7.407,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+CC Eri,38.594,-43.796,True,2,CC Eri,0.0,0,2,True,False,,0,False,0,0,Bronze
+CI Cam,64.926,55.999,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+CIZA J1324.7-5736,201.18,-57.614,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Cas A,350.85,58.815,True,2,Cas A,0.0,0,2,True,False,,0,False,0,0,Bronze
+Cen A,201.365,-43.019,True,2,Cen A,0.3599999999923743,0,2,True,False,,0,False,0,0,Bronze
+Cen X-3,170.316,-60.623,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Cen X-4,224.592,-31.669,True,2,Cen X-4,0.0,0,2,True,False,,0,False,0,0,Bronze
+Centaurus Cluster,192.216,-41.306,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Cep X-4,324.878,56.986,True,2,Ginga 2138+56,0.0,0,2,True,False,,0,False,0,0,Bronze
+Cir X-1,230.17,-57.167,True,2,Cir X-1,0.0,1,3,True,False,,0,False,0,0,Bronze
+ClG 0745-1910,116.88,-19.294,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Coma Cluster,194.953,27.981,True,2,3C 277.3,0.0,0,2,True,False,,0,False,0,0,Bronze
+Crab,83.633,22.014,True,2,Crab,3.599999999990186,1,3,True,True,ZTF20aagrhcx,2,False,0,2,Gold
+Cyg A,299.868,40.734,True,2,3C 405.0,0.3600000000038243,0,2,True,False,,0,False,0,0,Bronze
+Cyg Loop,312.775,30.683,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Cyg X-1,299.59,35.202,True,2,Cyg X-1,2.9416491956783335,1,3,True,False,,0,False,0,0,Bronze
+Cyg X-2,326.172,38.322,True,2,Cyg X-2,0.0,1,3,True,True,ZTF19aavqbvs,1,False,0,1,Silver
+Cyg X-3,308.108,40.958,True,2,Cyg X-3,2.7186850575863866,1,3,True,False,,0,False,0,0,Bronze
+DO Dra,175.91,71.689,True,2,DO Dra,0.0,0,2,True,True,ZTF17aaajihk,2,False,0,2,Gold
+EL UMa,163.779,36.996,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+EP 250916a,268.239,-35.323,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+EP 260531a,265.712,-31.2,True,2,,,0,2,False,False,,0,False,0,0,Bronze
+EP J171159.4-333253,257.997,-33.548,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+EQ Peg,352.967,19.937,True,2,EQ Peg,0.0,0,2,True,False,,0,False,0,0,Bronze
+ESO 103-035,279.585,-65.427,True,2,ESO 103-035,3.9600000000085247,0,2,True,False,,0,False,0,0,Bronze
+ESO 141-55,290.309,-58.671,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+ESO 533-2,333.443,-24.337,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+ESO 548-81,55.516,-21.244,True,2,ESO 548- 81,0.3355364946815059,0,2,True,True,ZTF18acwauhy,2,False,0,2,Gold
+EX Hya,193.102,-29.249,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+EXO 0748-676,117.141,-67.751,True,2,EXO 0748-676,4.515775821813056,0,2,True,False,,0,False,0,0,Bronze
+EXO 1722-363,261.298,-36.283,True,2,IGR J17252-3616,2.901974042141003,1,3,True,False,,0,False,0,0,Bronze
+EXO 1846-031,282.321,-3.062,True,2,EXO 1846-031,0.0,0,2,True,False,,0,False,0,0,Bronze
+EXO 2030+375,308.063,37.638,True,2,EXO 2030+375,4.59206774876175,0,2,True,False,,0,False,0,0,Bronze
+Eta Car,161.263,-59.686,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+FO Aqr,334.48,-8.351,True,2,FO Aqr,3.5618288508561537,0,2,True,True,ZTF21abntvmr,1,False,0,1,Silver
+Fairall 49,279.243,-59.402,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Fairall 9,20.941,-58.806,True,2,QSO B0121-590,2.523712277917848,0,2,True,False,,0,False,0,0,Bronze
+Fermi J1512-3221,228.05,-32.367,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GK Per,52.799,43.905,True,2,GK Per,1.1981261496985474,0,2,True,True,ZTF24aahxsxi,1,False,0,1,Silver
+GRB 221009A,288.263,19.803,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GRB130505B,139.341,1.701,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GRO J1008-57,152.442,-58.292,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GRO J1655-40,253.501,-39.846,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GRO J2058+42,314.689,41.794,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GRS 1716-249,259.904,-25.018,True,2,Granat 1716-249,0.0,0,2,True,False,,0,False,0,0,Bronze
+GRS 1739-278,265.665,-27.748,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GRS 1747-312,267.69,-31.292,True,2,GRS 1747-312,0.0,0,2,True,False,,0,False,0,0,Bronze
+GRS 1915+105,288.798,10.946,True,2,GRS 1915+105,0.0,0,2,True,False,,0,False,0,0,Bronze
+GS 0834-430 with GS 0836-429,128.979,-43.185,True,2,GS 0834-430,0.0,0,2,True,False,,0,False,0,0,Bronze
+GS 1354-64,209.543,-64.733,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GS 1826-238,277.368,-23.797,True,2,Ginga 1826-238,0.0,1,3,False,True,ZTF26aayucea,1,False,0,1,Silver
+GS 1843+00,281.413,0.892,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+GS 1843-02,282.074,-2.42,True,2,GS 1843-02,1.0799999999986845,0,2,True,False,,0,False,0,0,Bronze
+GS 2000+251,300.707,25.236,True,2,Ginga 2000+251,0.0,0,2,True,False,,0,False,0,0,Bronze
+GT Mus,174.873,-65.398,True,2,HD 101379,3.0827222233769604,1,3,True,False,,0,False,0,0,Bronze
+GX 1+4,263.008,-24.746,True,2,GX 1+4,3.2694206385728104,0,2,True,False,,0,False,0,0,Bronze
+GX 13+1,273.631,-17.157,True,2,GX 13+1,3.4398000700370415,0,2,True,False,,0,False,0,0,Bronze
+GX 17+2,274.006,-14.036,True,2,GX 17+2,0.0,0,2,True,False,,0,False,0,0,Bronze
+GX 3+1,266.983,-26.564,True,2,GX 3+1,0.0,0,2,True,False,,0,False,0,0,Bronze
+GX 301-2,186.657,-62.771,True,2,GX 301-2,3.599999999990187,1,3,True,False,,0,False,0,0,Bronze
+GX 304-1,195.321,-61.602,True,2,GX 304-1,0.0,0,2,True,False,,0,False,0,0,Bronze
+GX 339-4,255.706,-48.79,True,2,GX 339-4,0.0,0,2,True,False,,0,False,0,0,Bronze
+GX 340+0,251.449,-45.611,True,2,GX 340+0,0.3600000000152744,0,2,True,False,,0,False,0,0,Bronze
+GX 349+2,256.435,-36.423,True,2,GX 349+2,0.0,0,2,True,False,,0,False,0,0,Bronze
+GX 354-0_Slow-Burster with Rapid-Burster,262.989,-33.835,True,2,GX 354-0,4.6799700163511835,1,3,True,False,,0,False,0,0,Bronze
+GX 5-1,270.284,-25.079,True,2,GX 5-1,3.6000000000130865,1,3,True,False,,0,False,0,0,Bronze
+GX 9+1,270.385,-20.529,True,2,GX 9+1,0.0,0,2,True,False,,0,False,0,0,Bronze
+GX 9+9,262.934,-16.962,True,2,GX 9+9,0.0,0,2,True,False,,0,False,0,0,Bronze
+Gaia BH3,294.828,14.932,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Galactic Center Region,266.417,-29.008,True,2,Sgr Astar,0.7200000000087454,0,2,True,False,,0,False,0,0,Bronze
+Gamma Cas,14.177,60.717,True,2,Gam Cas,1.1359683967542298,0,2,True,False,,0,False,0,0,Bronze
+H 0614+091,94.28,9.137,True,2,4U 0614+09,0.0,0,2,True,True,ZTF18acukluh,3,False,0,3,Gold
+H 1145-619,177.0,-62.207,True,2,H 1145-619,0.0,0,2,True,False,,0,False,0,0,Bronze
+H 1553-542,239.454,-54.415,True,2,H 1553-542,4.1651667097522385,0,2,True,False,,0,False,0,0,Bronze
+H 1636-536,250.231,-53.751,True,2,4U 1636-536,0.0,1,3,True,False,,0,False,0,0,Bronze
+H 1658-298,255.527,-29.946,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+H 1730-333_Rapid-Burster with Slow-Burster,263.35,-33.388,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+H 1735-444,264.743,-44.45,True,2,4U 1735-44,0.0,0,2,False,False,,0,False,0,0,Bronze
+H 1743-322,266.565,-32.233,True,2,IGR J17464-3213,3.600000000035987,0,2,True,False,,0,False,0,0,Bronze
+H 1822-000,276.342,-0.012,True,2,H 1822-000,0.0,0,2,True,False,,0,False,0,0,Bronze
+HD 347929,271.851,19.706,True,2,1RXS J180724.2+194217,3.389166860736161,0,2,True,False,,0,False,0,0,Bronze
+HETE J1900.1-2455,285.036,-24.92,True,2,HT1900.1-2455,1.7999999999952545,0,2,True,False,,0,False,0,0,Bronze
+HR1099,54.197,0.588,True,2,HR 1099,0.8765312294467926,1,3,True,False,,0,False,0,0,Bronze
+Her X-1,254.458,35.342,True,2,Her X-1,2.936569604696356,1,3,True,True,ZTF24aazqeun,2,False,0,2,Gold
+IC 4329A,207.33,-30.309,True,2,IC 4329A,0.0,0,2,True,False,,0,False,0,0,Bronze
+IC 443,94.209,22.471,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+IGR J00291+5934 with V709 Cas,7.263,59.572,True,2,IGR J00291+5934,0.0,0,2,True,False,,0,False,0,0,Bronze
+IGR J06074+2205,91.861,22.097,True,2,,,0,2,True,True,ZTF21aaznpzj,2,False,0,2,Gold
+IGR J11435-6109,176.001,-61.127,True,2,IGR J11435-6109,0.0,0,2,True,False,,0,False,0,0,Bronze
+IGR J16194-2810,244.889,-28.128,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+IGR J17062-6143,256.686,-61.755,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+IGR J17191-2821,259.808,-28.327,True,2,IGR J17191-2821,0.0,0,2,True,False,,0,False,0,0,Bronze
+IGR J17379-3747,264.495,-37.772,True,2,IGR J17379-3747,0.0,0,2,True,False,,0,False,0,0,Bronze
+IGR J18410-0535,280.252,-5.596,True,2,IGR J18410-0535,0.0,0,2,True,True,ZTF19aaonvjw,2,False,0,2,Gold
+IGR J18483-0311,282.075,-3.161,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+IGR J19294+1816,292.35,18.267,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+IGR J21347+4737,323.583,47.63,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+II Peg,358.767,28.634,True,2,II Peg,1.4400000000033637,1,3,True,False,,0,False,0,0,Bronze
+IM Peg,343.259,16.841,True,2,IM Peg,3.4643593488886544,1,3,True,False,,0,False,0,0,Bronze
+IRAS 05078+1626,77.69,16.499,True,2,4U 0517+17,1.994983031859354,0,2,True,True,ZTF22aaxsadn,1,False,0,1,Silver
+KS 1947+300,297.398,30.209,True,2,,,0,2,True,True,ZTF18accozaw,2,False,0,2,Gold
+KT Eri,71.976,-10.179,True,2,,,0,2,True,True,ZTF19aakppwj,1,False,0,1,Silver
+LEDA 138501,32.406,52.444,True,2,,,0,2,True,True,ZTF18abjvbhp,2,False,0,2,Gold
+LMC X-1,84.915,-69.743,True,2,LMC X-1,3.7393021024640087,0,2,True,False,,0,False,0,0,Bronze
+LMC X-2,80.123,-71.959,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+LMC X-3,84.735,-64.084,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+LMC X-4,83.207,-66.371,True,2,LMC X-4,3.878417031615117,1,3,True,False,,0,False,0,0,Bronze
+LS I +61 303 with Swift J0243.6+6124,40.132,61.229,True,2,LSI+61 303,1.0938111218472746,0,2,True,False,,0,False,0,0,Bronze
+LS Peg,327.991,14.115,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+LS V +44 17,70.247,44.53,True,2,LSV+44 17,0.0,0,2,True,False,,0,False,0,0,Bronze
+M 15,322.493,12.167,True,2,XB 2127+119,0.0,0,2,True,False,,0,False,0,0,Bronze
+M 28,276.137,-24.87,True,2,,,0,2,True,True,ZTF22aaofilu,1,False,0,1,Silver
+M 31,10.646,41.162,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+M 42,83.822,-5.391,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+M 51,202.47,47.195,True,2,,,0,2,True,True,ZTF18aaccssl,2,False,0,2,Gold
+M 82,148.968,69.68,True,2,,,0,2,True,True,ZTF19acaiwzl,1,False,0,1,Silver
+M 87,187.706,12.391,True,2,M87,0.3600000000095494,0,2,True,True,ZTF18abakqdn,1,False,0,1,Silver
+M 95,160.991,11.704,True,2,,,0,2,True,True,ZTF25abwbwrl,1,False,0,1,Silver
+MAXI J0057-720,14.457,-72.043,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0158-744,29.857,-74.258,True,2,MAXI J0158-744,3.7301481907791785,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0511-522,77.752,-52.204,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0556-332,89.193,-33.175,True,2,MAXI J0556-332,3.6000000000130865,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0636+146,99.351,14.631,True,2,MAXI J0636+146,1.5996635739645628,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0637-430,99.098,-42.868,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0655-013,103.811,-1.464,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0709-159,107.404,-16.096,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0758-456,119.652,-45.704,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0903-531,136.279,-53.505,True,2,MAXI J0903-531,0.7199999999743955,0,2,True,False,,0,False,0,0,Bronze
+MAXI J0911-655 and Swift J0911.9-6452,138.012,-64.867,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1305-704,196.731,-70.451,True,2,MAXI J1305-704,4.818425683571258,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1348-630,207.053,-63.274,True,2,MAXI J1348-630,1.6190076650896434,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1409-619,212.011,-61.983,True,2,MAXI J1409-619,3.600000000035986,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1421-613,215.405,-61.607,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1501-026,225.368,-2.603,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1535-571,233.832,-57.23,True,2,MAXI J1535-571,0.0,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1543-564,235.823,-56.414,True,2,MAXI J1543-564,1.991476842012613,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1619-383,244.767,-38.226,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1621-501,245.092,-50.02,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1630-276,247.682,-27.607,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1631-479,247.806,-47.805,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1647-227,251.96,-22.75,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1659-152,254.757,-15.258,True,2,MAXI J1659-152,0.0,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1714-130,258.585,-13.06,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1727-203,262.125,-20.382,True,2,,,0,2,True,True,ZTF18admiecf,2,False,0,2,Gold
+MAXI J1735-304 with Terzan 1,263.613,-30.454,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1752-457,268.213,-45.795,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1803-298,270.762,-29.83,True,2,MAXI J1803-298,1.7999999999952545,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1807+132,272.032,13.251,True,2,MAXI J1807+132,1.0799999999986845,0,2,True,True,ZTF19abvioim,2,False,0,2,Gold
+MAXI J1810-222,273.123,-22.327,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1813-095,273.392,-9.533,True,2,MAXI J1813-095,3.8312023371560406,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1816-195,274.218,-19.632,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1820+070,275.091,7.185,True,2,MAXI J1820+070,2.268000000002233,0,2,True,True,ZTF18abjkrup,3,False,0,3,Gold
+MAXI J1828-249,277.243,-25.03,True,2,MAXI J1828-249,4.857998547345821,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1834-021,279.036,-2.287,True,2,,,0,2,True,True,ZTF19aaimnam,2,False,0,2,Gold
+MAXI J1836-194,278.931,-19.32,True,2,MAXI J1836-194,0.0,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1848-015,282.207,-1.497,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+MAXI J1910-057,287.595,-5.799,True,2,SWIFT J1910.2-0546,0.0,0,2,True,True,ZTF22aaaumci,1,False,0,1,Silver
+MAXI J1932+091,293.293,9.195,True,2,MAXI J1932+091,0.9720000000054148,0,2,True,True,ZTF22aaakkkq,1,False,0,1,Silver
+MAXI J1957+032,299.163,3.445,True,2,IGRJ19566+0326,3.5934945874650723,0,2,True,True,ZTF19acerbwo,2,False,0,2,Gold
+MCG +08-11-011,88.724,46.439,True,2,MCG +8-11-11,2.480855241110919,0,2,True,True,ZTF17aaaocpq,2,False,0,2,Gold
+MCG -01-13-025,72.923,-3.809,True,2,MCG-01-13-025,1.6242179673499673,0,2,True,True,ZTF18abvtijw,2,False,0,2,Gold
+MCG -01-24-012,140.193,-8.056,True,2,MCG-01-24-012,0.2880000000052968,0,2,True,True,ZTF20aagwjcx,1,False,0,1,Silver
+MCG -02-08-038,45.018,-10.825,True,2,,,0,2,True,True,ZTF18abvldmo,2,False,0,2,Gold
+MCG -02-12-050,69.559,-10.796,True,2,,,0,2,True,True,ZTF18acbvksl,2,False,0,2,Gold
+MCG -05-23-016,146.917,-30.949,True,2,MCG -5-23-16,0.0,0,2,True,False,,0,False,0,0,Bronze
+MCG -06-30-15,203.974,-34.295,True,2,MCG -6-30-15,0.0,0,2,True,False,,0,False,0,0,Bronze
+MR 2251-178,343.524,-17.582,True,2,QSO B2251-179,3.431828206916675,0,2,True,True,ZTF18acdjktu,3,False,0,3,Gold
+MWC 148,98.247,5.8,True,2,HESS J0632+057,0.0,0,2,True,False,,0,False,0,0,Bronze
+MXB 0656-072,104.572,-7.21,True,2,MXB 0656-072,0.0,0,2,True,True,ZTF22aboatpv,1,False,0,1,Silver
+Mrk 110,141.304,52.286,True,2,Mrk 110,1.0799999999815098,0,2,True,True,ZTF22aabsjls,1,False,0,1,Silver
+Mrk 1148,12.978,17.433,True,2,Mrk 1148,0.0,0,2,True,True,ZTF18adbdixm,2,False,0,2,Gold
+Mrk 335,1.582,20.203,True,2,,,0,2,True,True,ZTF18abwfdbb,3,False,0,3,Gold
+Mrk 348,12.196,31.957,True,2,NGC 262,1.2217616024243572,0,2,True,True,ZTF18abosnmz,2,False,0,2,Gold
+Mrk 421,166.114,38.209,True,2,Mrk 421,0.0,0,2,True,False,,0,False,0,0,Bronze
+Mrk 501,253.468,39.76,True,2,Mrk 501,2.7674287818560064,0,2,True,True,ZTF20aakznho,2,False,0,2,Gold
+Mrk 509,311.041,-10.723,True,2,Mrk 509,0.0,0,2,True,True,ZTF18adnkeyn,3,False,0,3,Gold
+Mrk 766,184.61,29.813,True,2,,,0,2,True,True,ZTF21acovybi,2,False,0,2,Gold
+Mrk 926,346.181,-8.686,True,2,Mrk 926,1.0079999999993237,0,2,True,True,ZTF18admusaa,3,False,0,3,Gold
+NGC 1068,40.67,-0.013,True,2,,,0,2,True,True,ZTF19aaahsfg,1,False,0,1,Silver
+NGC 1365,53.402,-36.14,True,2,NGC 1365,3.526468399287157,0,2,True,False,,0,False,0,0,Bronze
+NGC 2110,88.047,-7.456,True,2,NGC 2110,1.6327724388322842,0,2,True,True,ZTF22abpfohs,2,False,0,2,Gold
+NGC 2617,128.912,-4.088,True,2,,,0,2,True,True,ZTF18acgvhxo,3,False,0,3,Gold
+NGC 2992,146.425,-14.326,True,2,NGC 2992,1.440000000009089,0,2,True,True,ZTF25aadfbzo,2,False,0,2,Gold
+NGC 3227,155.877,19.865,True,2,NGC 3227,3.4048712712073055,0,2,True,True,ZTF23aabhqcf,2,False,0,2,Gold
+NGC 3516,166.698,72.569,True,2,NGC 3516,0.0,0,2,True,True,ZTF19acytnrn,2,False,0,2,Gold
+NGC 3783,174.757,-37.739,True,2,NGC 3783,0.0,0,2,True,False,,0,False,0,0,Bronze
+NGC 4051,180.79,44.531,True,2,NGC 4051,1.0800000000158596,0,2,True,True,ZTF18aarzxua,1,False,0,1,Silver
+NGC 4151,182.636,39.406,True,2,,,0,2,True,True,ZTF19aamhcbe,2,False,0,2,Gold
+NGC 5252,204.566,4.543,True,2,NGC 5252,4.264635872884475,0,2,True,False,,0,False,0,0,Bronze
+NGC 526,20.977,-35.065,True,2,NGC 526,3.697175842434131,0,2,True,False,,0,False,0,0,Bronze
+NGC 5506,213.312,-3.208,True,2,NGC 5506,0.0,0,2,True,True,ZTF21aauywqm,1,False,0,1,Silver
+NGC 5548,214.498,25.137,True,2,NGC 5548,0.0,0,2,True,True,ZTF18adbadpx,2,False,0,2,Gold
+NGC 5995,237.104,-13.758,True,2,,,0,2,True,True,ZTF25aahxzvl,1,False,0,1,Silver
+NGC 6300,259.248,-62.821,True,2,NGC 6300,0.0,0,2,True,False,,0,False,0,0,Bronze
+NGC 6440,267.223,-20.362,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+NGC 6624,275.92,-30.361,True,2,H 1820-303,3.1062884963484896,1,3,False,False,,0,False,0,0,Bronze
+NGC 6814 with V1432 Aql,295.668,-10.323,True,2,,,0,2,True,True,ZTF18abudtyr,2,False,0,2,Gold
+NGC 6860,302.195,-61.1,False,0,NGC 6860,0.0,0,0,False,False,,0,False,0,0,No match
+NGC 7172,330.508,-31.87,True,2,NGC 7172,0.0,0,2,True,False,,0,False,0,0,Bronze
+NGC 7314,338.942,-26.05,True,2,NGC 7314,1.800000000006704,0,2,True,False,,0,False,0,0,Bronze
+NGC 7469,345.815,8.874,True,2,NGC 7469,3.592438525926243,0,2,True,True,ZTF19abnqvss,1,False,0,1,Silver
+NGC 7582,349.598,-42.371,True,2,NGC 7582,0.0,0,2,True,False,,0,False,0,0,Bronze
+NGC 7603,349.736,0.244,True,2,NGC 7603,0.0,0,2,True,False,,0,False,0,0,Bronze
+NGC 931,37.06,31.311,True,2,NGC 931,2.4867515090400256,0,2,True,True,ZTF18acsypzp,1,False,0,1,Silver
+NGC 973,38.584,32.506,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+OAO 1657-41,255.2,-41.673,True,2,EXO 1657-419,0.3599999999923743,1,3,True,False,,0,False,0,0,Bronze
+OJ 287,133.704,20.109,True,2,3EG J0853+1941,1.8000000000067045,0,2,True,True,ZTF18aabjhiy,3,False,0,3,Gold
+ON 231,185.382,28.233,True,2,,,0,2,True,True,ZTF18abafqea,1,False,0,1,Silver
+Ophiuchus Cluster,258.108,-23.376,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+PG 1553+113,238.929,11.19,True,2,QSO B1553+113,0.3600000000038243,0,2,True,True,ZTF20aayxygl,2,False,0,2,Gold
+PKS 0521-365,80.742,-36.459,True,2,QSO B0521-365,1.8479601164393595,0,2,True,False,,0,False,0,0,Bronze
+PKS 0548-322,87.669,-32.271,True,2,PKS 0548-322,0.942876521627172,0,2,True,False,,0,False,0,0,Bronze
+PKS 1510-08,228.211,-9.1,True,2,QSO J1512-0906,0.1800000000018436,0,2,True,True,ZTF18abdcaei,3,False,0,3,Gold
+PKS 2155-304,329.717,-30.226,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+PQ Gem,117.822,14.74,True,2,PQ Gem,0.0,0,2,True,True,ZTF20aaedkgh,2,False,0,2,Gold
+PSR B1259-63 with IGR J13020-6359,195.699,-63.836,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+PSR B1509-58,228.481,-59.136,True,2,PSR B1509-58,0.0,0,2,True,False,,0,False,0,0,Bronze
+PSR J1023+0038,155.949,0.645,True,2,PSR J1023+0038,0.0,0,2,True,True,ZTF18acvgysv,3,False,0,3,Gold
+Perseus Cluster,49.951,41.512,True,2,NGC 1275,2.695740931941432,0,2,True,True,ZTF23aaqcqxz,2,False,0,2,Gold
+Pup A,126.029,-42.997,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+QSO B2356-309,359.783,-30.628,True,2,QSO B2356-309,2.880000000008211,0,2,True,False,,0,False,0,0,Bronze
+RCW 86,220.121,-62.645,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+RGB J1117+202,169.276,20.235,True,2,RX J1117.1+2014,1.0799999999929597,0,2,True,True,ZTF18aceykry,3,False,0,3,Gold
+RGB J1136+676,174.125,67.618,True,2,BWE 1133+6753,0.3599999999580243,0,2,True,True,ZTF18adpnwoz,2,False,0,2,Gold
+RS Oph,267.555,-6.708,True,2,RS Oph,0.0,1,3,True,False,,0,False,0,0,Bronze
+RU Peg,333.511,12.703,True,2,,,0,2,True,True,ZTF20acvzpjq,1,False,0,1,Silver
+RX J0209.6-7427,32.391,-74.453,True,2,RX J0209.6-7427,2.9993814419079854,0,2,True,False,,0,False,0,0,Bronze
+RX J0520.5-6932,80.129,-69.532,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+RX J1053.7+4929,163.434,49.499,True,2,MS 1050.7+4946,0.0,0,2,True,True,ZTF21aaesynl,2,False,0,2,Gold
+RX J1718.4-4029,259.601,-40.492,True,2,RX J1718.4-4029,3.600000000035986,0,2,True,False,,0,False,0,0,Bronze
+RX J1832-33,278.934,-32.991,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+S5 0716+71,110.473,71.343,True,2,,,0,2,True,True,ZTF18abvtfpt,1,False,0,1,Silver
+SAX J1324.5-6313,201.113,-63.223,True,2,SAX J1324.5-6313,0.0,0,2,True,False,,0,False,0,0,Bronze
+SAX J1712.6-3739,258.142,-37.643,True,2,SAX J1712.6-3739,0.0,0,2,True,False,,0,False,0,0,Bronze
+SAX J1747.0-2853,266.761,-28.883,True,2,SAX J1747.0-2853,0.0,0,2,True,False,,0,False,0,0,Bronze
+SAX J1808.4-3658,272.115,-36.979,True,2,SAX J1808.4-3658,0.0,0,2,True,False,,0,False,0,0,Bronze
+SAX J1810.8-2609,272.685,-26.15,True,2,SAX J1810.8-2609,0.0,0,2,True,False,,0,False,0,0,Bronze
+SAX J1828.5-1037,277.142,-10.617,True,2,SAX J1828.5-1037,3.5383706150262215,0,2,True,True,ZTF18abhjypr,3,False,0,3,Gold
+SAX J2103.5+4545,315.899,45.752,True,2,SAX J2103.5+4545,0.0,0,2,True,False,,0,False,0,0,Bronze
+SGR 0418+5729,64.641,57.54,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+SGR 1833-0832,278.435,-8.519,True,2,SGR 1833-0832,0.0,0,2,True,False,,0,False,0,0,Bronze
+SGR 1935+2154,293.732,21.897,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+SLX 1735-269,264.571,-26.994,True,2,SLX 1735-269,0.0,0,2,True,False,,0,False,0,0,Bronze
+SLX 1746-331,267.452,-33.204,True,2,SLX 1746-331,3.960000000019975,0,2,True,False,,0,False,0,0,Bronze
+SMC X-1,19.273,-73.442,True,2,SMC X-1,4.143674379817592,1,3,True,False,,0,False,0,0,Bronze
+SMC X-2,13.651,-73.676,True,2,SMC X-2,0.20236948314189,0,2,True,False,,0,False,0,0,Bronze
+SMC X-3,13.024,-72.434,True,2,SMC X-3,3.760390505113384,0,2,True,False,,0,False,0,0,Bronze
+SN 1006,225.592,-42.097,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+SRGA J144459.2-604207,221.247,-60.702,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+SS 433,287.957,4.983,True,2,SS 433,3.586393849850769,1,3,True,True,ZTF18abcgtnb,2,False,0,2,Gold
+SS Aur,93.343,47.74,True,2,,,0,2,True,True,ZTF17aabefty,2,False,0,2,Gold
+SS Boo,228.386,38.568,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+SS Cyg,325.678,43.586,True,2,1H 2140+433,0.0,0,2,True,False,,0,False,0,0,Bronze
+SU UMa,123.118,62.606,True,2,,,0,2,True,True,ZTF19aanesjo,2,False,0,2,Gold
+SW UMa,129.178,53.477,True,2,,,0,2,True,True,ZTF20aaryskk,2,False,0,2,Gold
+SZ Psc,348.349,2.676,True,2,SZ Psc,1.58400000000125,1,3,True,False,,0,False,0,0,Bronze
+Sco X-1,244.979,-15.64,True,2,Sco X-1,0.0,1,3,True,True,ZTF19aaetdak,2,False,0,2,Gold
+Sct X-1,278.858,-7.614,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Ser X-1,279.99,5.036,True,2,Ser X-1,0.0,0,2,True,True,ZTF18abkjzud,2,False,0,2,Gold
+Spica,201.298,-11.161,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Swift J0243.6+6124,40.918,61.434,True,2,,,0,2,True,True,ZTF20aabshfj,1,False,0,1,Silver
+Swift J0549.7-6812,87.527,-68.249,True,2,SWIFT J0549.7-6812,1.4945830464989909,0,2,True,False,,0,False,0,0,Bronze
+Swift J0840.7-3516,130.17,-35.274,True,2,SWIFT J0840.7-3516,3.272857017107013,0,2,True,False,,0,False,0,0,Bronze
+Swift J1112.2-8238,167.947,-82.646,True,2,SWIFT J1112.2-8238,0.9215956116855788,0,2,True,False,,0,False,0,0,Bronze
+Swift J1357.2-0933,209.32,-9.544,True,2,SWIFT J1357.2-0933,0.0,0,2,True,True,ZTF19aanxwrq,3,False,0,3,Gold
+Swift J1626.6-5156,246.651,-51.943,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Swift J164449.3+573451,251.208,57.583,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Swift J1658.2-4242,254.553,-42.698,True,2,Swift J1658.2-4242,3.910811907278439,0,2,True,False,,0,False,0,0,Bronze
+Swift J1727.8-1613,261.93,-16.205,True,2,,,0,2,True,True,ZTF23abaewkl,2,False,0,2,Gold
+Swift J1728.9-3613,262.232,-36.237,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Swift J1741.5-6548,265.35,-65.791,True,2,SWIFT J1741.5-6548,0.0,0,2,True,False,,0,False,0,0,Bronze
+Swift J1753.5-0127,268.368,-1.452,True,2,SWIFT J1753.5-0127,2.1599999999990684,1,3,True,False,,0,False,0,0,Bronze
+Swift J1822.3-1606,275.576,-16.074,True,2,SWIFT J1822.3-1606,3.459257627974653,0,2,True,False,,0,False,0,0,Bronze
+Swift J1834.9-0846,278.718,-8.766,True,2,Swift J1834.9-0846,3.557948367960953,0,2,True,False,,0,False,0,0,Bronze
+Swift J1842.5-1124,280.572,-11.417,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Swift J1843.5-0343,280.899,-3.73,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Swift J1845.7-0037,281.478,-0.659,True,2,SWIFT J1845.7-0037,0.0,0,2,True,False,,0,False,0,0,Bronze
+Swift J1858.6-0814,284.645,-8.238,True,2,,,0,2,True,True,ZTF18abzvvjh,2,False,0,2,Gold
+Swift J1922.7-1716,290.654,-17.284,True,2,SWIFT J1922.7-1716,0.0,1,3,True,True,ZTF22abfbyjc,2,False,0,2,Gold
+Swift J2058.4+0516,314.583,5.226,True,2,SWIFT J2058.4+0516,0.0,0,2,True,False,,0,False,0,0,Bronze
+T CrB,239.876,25.92,True,2,T CrB,0.7199999999972952,0,2,True,False,,0,False,0,0,Bronze
+T Leo,174.612,3.369,True,2,,,0,2,True,True,ZTF18acrxszj,2,False,0,2,Gold
+TRAPPIST-1,346.622,-5.041,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+TV Col,82.356,-32.818,True,2,TV Col,0.3599999999809244,0,2,True,False,,0,False,0,0,Bronze
+Terzan 1,263.949,-30.47,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Terzan 2,261.888,-30.803,True,2,GRS 1724-308,4.745687245674243,0,2,True,False,,0,False,0,0,Bronze
+Terzan 5,267.233,-24.895,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+TrA Cluster,249.567,-64.347,True,2,CIZA J1638.2-6420,0.7200000000087455,0,2,True,False,,0,False,0,0,Bronze
+Tycho SNR,6.308,64.144,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+U Gem,118.772,22.001,True,2,,,0,2,True,True,ZTF19acsipgh,1,False,0,1,Silver
+UGC 4305,124.771,70.72,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+UV Cet,24.756,-17.95,True,2,UV Cet,2.3919056635987026,1,3,True,False,,0,False,0,0,Bronze
+UX Ari,51.648,28.715,True,2,UX Ari,1.5786367405804942,1,3,True,False,,0,False,0,0,Bronze
+V 0332+53,53.75,53.173,False,0,V0332+53,0.0,0,0,False,True,ZTF20aaaejla,1,False,0,1,Bronze
+V1223 Sgr,283.759,-31.163,True,2,4U 1849-31,4.738087426193339,0,2,True,False,,0,False,0,0,Bronze
+V2674 Oph,261.634,-28.828,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+V404 Cyg,306.016,33.868,True,2,V404 Cyg,0.0,0,2,True,False,,0,False,0,0,Bronze
+V407 Cyg,315.541,45.776,True,2,V407 Cyg,0.0,0,2,True,True,ZTF17aaawdcq,1,False,0,1,Silver
+V426 Oph,271.965,5.863,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+V4641 Sgr,274.84,-25.407,True,2,SAX J1819.3-2525,0.0,0,2,True,True,ZTF21abvdujh,1,False,0,1,Silver
+V709 Cas with IGR J00291+5934,7.204,59.289,True,2,V709 Cas,1.600532420425964,0,2,True,False,,0,False,0,0,Bronze
+VW Hyi,62.297,-71.295,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+VY Aqr,318.039,-8.827,True,2,,,0,2,True,True,ZTF18abskpen,2,False,0,2,Gold
+VY Ari,42.182,31.115,True,2,VY Ari,1.1231168847495971,1,3,True,False,,0,False,0,0,Bronze
+Vela Pulsar and SNR,128.836,-45.176,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+Vela X-1,135.529,-40.555,True,2,Vela X-1,0.0,1,3,True,False,,0,False,0,0,Bronze
+WW Cet,2.853,-11.479,True,2,,,0,2,True,True,ZTF21acqojzp,2,False,0,2,Gold
+X Per,58.846,31.046,True,2,X Per,0.0,1,3,True,False,,0,False,0,0,Bronze
+XSS J12270-4859,186.995,-48.896,True,2,XSS J12270-4859,1.4399999999919135,0,2,True,False,,0,False,0,0,Bronze
+XTE J1118+480,169.545,48.037,True,2,XTE J1118+480,0.0,0,2,True,False,,0,False,0,0,Bronze
+XTE J1543-568,236.008,-56.712,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1550-564,237.745,-56.477,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1650-500,252.504,-49.962,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1701-407,255.435,-40.858,True,2,XTE J1701-407,0.0,0,2,True,False,,0,False,0,0,Bronze
+XTE J1701-462,255.244,-46.186,True,2,XTE J1701-462,2.4923502449950927,1,3,True,False,,0,False,0,0,Bronze
+XTE J1709-267,257.377,-26.656,True,2,RX J1709.5-2639,4.82819138291185,0,2,True,True,ZTF22aaodlyp,2,False,0,2,Gold
+XTE J1710-281,257.551,-28.132,True,2,XTE J1710-281,0.0,0,2,True,False,,0,False,0,0,Bronze
+XTE J1739-285,264.975,-28.496,True,2,XTE J1739-285,0.0,0,2,True,False,,0,False,0,0,Bronze
+XTE J1752-223,268.063,-22.343,True,2,XTE J1752-223,3.6000000000130874,0,2,True,False,,0,False,0,0,Bronze
+XTE J1807-294,271.749,-29.408,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1810-189,272.608,-19.07,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1810-197,272.463,-19.731,True,2,XTE J1810-197,0.0,0,2,True,False,,0,False,0,0,Bronze
+XTE J1829-098,277.434,-9.857,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1855-026,283.877,-2.605,True,2,XTE J1855-026,0.0,0,2,True,True,ZTF24aaesxju,1,False,0,1,Silver
+XTE J1856+053,284.179,5.309,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1858+034,284.688,3.432,True,2,XTE J1858+034,3.5935435774248634,0,2,True,False,,0,False,0,0,Bronze
+XTE J1859+083,284.76,8.232,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1859+226,284.679,22.666,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1901+014,285.417,1.454,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J1908+094,287.221,9.385,True,2,XTE J1908+094,0.0,0,2,True,False,,0,False,0,0,Bronze
+XTE J1946+274,296.417,27.356,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+XTE J2012+381,303.157,38.184,True,2,XTE J2012+381,2.829706397121616,0,2,True,False,,0,False,0,0,Bronze
+YZ CMi,116.167,3.553,True,2,YZ CMi,3.6000000000002053,0,2,True,False,,0,False,0,0,Bronze
+ZwCl 0335+0956,54.647,9.965,True,2,,,0,2,True,False,,0,False,0,0,Bronze
+sigma Gem,115.828,28.884,True,2,Sigma Gem,1.4399999999919135,1,3,True,False,,0,False,0,0,Bronze
+zeta Ori,85.19,-1.943,True,2,,,0,2,True,False,,0,False,0,0,Bronze

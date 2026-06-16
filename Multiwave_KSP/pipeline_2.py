@@ -1,0 +1,577 @@
+# =============================================================================
+# pipeline.py — Main crossmatch + data retrieval pipeline
+# =============================================================================
+# Workflow:
+#   1. Load MAXI + Swift catalogs
+#   2. For each MAXI source, cone-search Swift (X-ray crossmatch)
+#   3. Fetch MAXI and Swift light curves and save locally
+#   4. Detect outbursts from light curves
+#   5. Optical crossmatch: ZTF first, ATLAS only if ZTF misses
+#   6. Save optical light curves locally — ATLAS jobs submitted in batch
+#   7. Classify each source as Gold / Silver / Bronze
+#      (separately for sources with and without outbursts)
+#   8. Save final crossmatch table
+#
+# Usage:
+#   python pipeline.py
+# =============================================================================
+
+import os
+import ssl
+import re
+import time
+import json
+import certifi
+import numpy as np
+import pandas as pd
+import urllib.request
+from io import StringIO
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+from astropy.coordinates import SkyCoord
+import astropy.units as u
+from alerce.core import Alerce
+
+# Load runtime environment parameters safely from your config file
+from config import (
+    ATLAS_USER, ATLAS_PASS, ATLAS_BASEURL,
+    ZTF_START_MJD, ATLAS_START_MJD,
+    CONE_RADIUS_ARCSEC, OUTBURST_SIGMA_THRESHOLD,
+    SWIFT_CSV, MAXI_CSV,
+    LIGHTCURVE_DIR, RESULTS_DIR
+)
+
+# Instantiate clients and network settings globally
+alerce_client = Alerce()
+ssl_ctx = ssl.create_default_context(cafile=certifi.where())
+
+
+def http_request(method, url, headers=None, data=None, timeout=30):
+    """Unified HTTP helper wrapping urllib with certifi SSL contexts."""
+    req_headers = headers or {}
+    req_data = None
+    if data is not None:
+        req_data = urlencode(data).encode("utf-8")
+        req_headers = {**req_headers, "Content-Type": "application/x-www-form-urlencoded"}
+    req = Request(url, data=req_data, headers=req_headers, method=method)
+    with urlopen(req, context=ssl_ctx, timeout=timeout) as resp:
+        body = resp.read().decode("utf-8")
+        return resp.status, body, dict(resp.headers)
+
+
+# =============================================================================
+# 1. LOAD CATALOGS
+# =============================================================================
+
+def load_catalogs():
+    swift = pd.read_csv(SWIFT_CSV)
+    maxi  = pd.read_csv(MAXI_CSV)
+
+    for df in [swift, maxi]:
+        df['RA J2000 Degs']  = pd.to_numeric(df['RA J2000 Degs'],  errors='coerce')
+        df['Dec J2000 Degs'] = pd.to_numeric(df['Dec J2000 Degs'], errors='coerce')
+
+    swift = swift.dropna(subset=['RA J2000 Degs', 'Dec J2000 Degs']).reset_index(drop=True)
+    maxi  = maxi.dropna(subset=['RA J2000 Degs', 'Dec J2000 Degs']).reset_index(drop=True)
+
+    print(f"Loaded {len(maxi)} MAXI sources and {len(swift)} Swift sources.")
+    return maxi, swift
+
+
+# =============================================================================
+# 2. SWIFT CONE SEARCH (X-ray crossmatch)
+# =============================================================================
+
+def crossmatch_swift(maxi_ra, maxi_dec, swift_df, radius_arcsec=CONE_RADIUS_ARCSEC):
+    """Find the closest Swift source within radius_arcsec of (maxi_ra, maxi_dec)."""
+    maxi_coord   = SkyCoord(ra=maxi_ra*u.deg, dec=maxi_dec*u.deg)
+    swift_coords = SkyCoord(
+        ra=swift_df['RA J2000 Degs'].values*u.deg,
+        dec=swift_df['Dec J2000 Degs'].values*u.deg
+    )
+    sep = maxi_coord.separation(swift_coords).arcsec
+    idx = sep.argmin()
+    if sep[idx] <= radius_arcsec:
+        return swift_df.iloc[idx], sep[idx]
+    return None, None
+
+
+# =============================================================================
+# 3. LIGHT CURVE FETCHING — MAXI
+# =============================================================================
+
+def radec_to_maxi_id(ra, dec):
+    """
+    Convert RA/Dec to MAXI source ID using precise coordinates.
+    Format: J<HHMM><+/-><DD><T> where T is tenths of degree in dec.
+    e.g. RA=84.727, Dec=26.316 -> J0538+263
+    Tries rounded, floor and ceil variants to handle borderline cases.
+    """
+    coord   = SkyCoord(ra=ra*u.deg, dec=dec*u.deg)
+    hh      = int(coord.ra.hms.h)
+    mm      = int(coord.ra.hms.m)
+    dec_abs = abs(coord.dec.deg)
+    dd      = int(dec_abs)
+    frac    = dec_abs - dd
+    sign    = '+' if dec >= 0 else '-'
+
+    t_round = int(round(frac * 10))
+    if t_round == 10:
+        dd_r = dd + 1
+        t_round = 0
+    else:
+        dd_r = dd
+
+    t_floor = int(np.floor(frac * 10))
+    t_ceil  = min(int(np.ceil(frac * 10)), 9)
+
+    id_round = f"J{hh:02d}{mm:02d}{sign}{dd_r:02d}{t_round}"
+    id_floor = f"J{hh:02d}{mm:02d}{sign}{dd:02d}{t_floor}"
+    id_ceil  = f"J{hh:02d}{mm:02d}{sign}{dd:02d}{t_ceil}"
+
+    return list(dict.fromkeys([id_round, id_floor, id_ceil]))
+
+
+def fetch_maxi_lightcurve(source_name, ra, dec):
+    os.makedirs(os.path.join(LIGHTCURVE_DIR, "maxi"), exist_ok=True)
+    save_path = os.path.join(LIGHTCURVE_DIR, "maxi", f"{source_name.replace(' ', '_')}.csv")
+    if os.path.exists(save_path):
+        return pd.read_csv(save_path)
+
+    possible_ids = radec_to_maxi_id(ra, dec)
+    print(f"  MAXI trying IDs: {possible_ids}")
+
+    for target_id in possible_ids:
+        base_url = f"http://maxi.riken.jp/star_data/{target_id}/{target_id}"
+        for suffix in ['_g_lc_1day_all.dat', '_g_lc_1orb_all.dat']:
+            url = base_url + suffix
+            try:
+                req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req, timeout=8) as resp:  # ← 8s not 15s
+                    text = resp.read().decode('utf-8')
+                if len(text) > 100 and not text.strip().startswith('<!'):
+                    df = pd.read_csv(
+                        StringIO(text), sep=r'\s+', comment='#',
+                        names=['MJD', 'rate_2_20keV', 'err_2_20keV',
+                               'rate_2_4keV',   'err_2_4keV',
+                               'rate_4_10keV',  'err_4_10keV',
+                               'rate_10_20keV', 'err_10_20keV']
+                    )
+                    df = df.apply(pd.to_numeric, errors='coerce').dropna(subset=['MJD'])
+                    df.to_csv(save_path, index=False)
+                    print(f"  MAXI: fetched {len(df)} points for {source_name} ({target_id})")
+                    return df
+            except Exception as e:
+                print(f"    MAXI tried: {url} -> {type(e).__name__}: {e}")
+                continue
+
+    print(f"  MAXI fetch completely failed for {source_name}")
+    return None
+
+
+# =============================================================================
+# 4. LIGHT CURVE FETCHING — SWIFT/BAT
+# =============================================================================
+
+def fetch_swift_lightcurve(source_name):
+    os.makedirs(os.path.join(LIGHTCURVE_DIR, "swift"), exist_ok=True)
+    save_path = os.path.join(LIGHTCURVE_DIR, "swift", f"{source_name.replace(' ', '_')}.csv")
+    if os.path.exists(save_path):
+        return pd.read_csv(save_path)
+
+    name_fmt = source_name.replace(' ', '')
+
+    for subdir in ['', 'weak/']:
+        for suffix in ['.lc.txt', '.orbit.lc.txt']:
+            url = f"https://swift.gsfc.nasa.gov/results/transients/{subdir}{name_fmt}{suffix}"
+            try:
+                with urllib.request.urlopen(url, context=ssl_ctx, timeout=10) as resp:  # ← 10s not 30s
+                    text = resp.read().decode('utf-8')
+                if len(text) > 100 and not text.strip().startswith("<!DOCTYPE"):
+                    df = pd.read_csv(
+                        StringIO(text), sep=r'\s+', comment='!',
+                        header=None
+                    )
+                    df = df.iloc[:, [0, 1, 2]]
+                    df.columns = ['MJD', 'rate_15_50keV', 'err_15_50keV']
+                    df = df.apply(pd.to_numeric, errors='coerce').dropna()
+                    df.to_csv(save_path, index=False)
+                    print(f"  Swift: fetched {len(df)} points for {source_name}")
+                    return df
+            except Exception:
+                pass  # fail fast, try next URL
+
+    print(f"  Swift fetch completely failed for {source_name}")
+    return None
+
+
+# =============================================================================
+# 5. OUTBURST DETECTION
+# =============================================================================
+
+def detect_outburst(lc_df, rate_col, err_col, sigma=OUTBURST_SIGMA_THRESHOLD):
+    """Flags if peak flux variance breaches standard MAD scales."""
+    if lc_df is None or len(lc_df) < 10:
+        return False
+
+    rates = lc_df[rate_col].dropna()
+    rates = rates[rates > 0]
+    if len(rates) < 5:
+        return False
+
+    median = rates.median()
+    mad    = (rates - median).abs().median()
+    if mad == 0:
+        mad = rates.std() + 1e-6
+
+    return float(rates.max()) > (median + sigma * mad)
+
+
+# =============================================================================
+# 6. OPTICAL CROSSMATCH — ZTF via ALeRCE
+# =============================================================================
+
+def query_ztf(ra, dec, source_name, radius_arcsec=CONE_RADIUS_ARCSEC):
+    """Query ZTF via ALeRCE using query_lightcurve with nested detection extraction."""
+    os.makedirs(os.path.join(LIGHTCURVE_DIR, "ztf"), exist_ok=True)
+    save_path = os.path.join(LIGHTCURVE_DIR, "ztf", f"{source_name.replace(' ', '_')}.csv")
+
+    # Load from cache
+    if os.path.exists(save_path):
+        df = pd.read_csv(save_path)
+        n_bands = int(df['fid'].nunique()) if 'fid' in df.columns else 0
+        oid = df['oid'].iloc[0] if 'oid' in df.columns else None
+        return True, oid, n_bands
+
+    try:
+        result = alerce_client.query_objects(
+            survey="ztf", ra=ra, dec=dec, radius=radius_arcsec
+        )
+        time.sleep(0.1)
+
+        if result is None or len(result) == 0:
+            return False, None, 0
+
+        oid = result.iloc[0]['oid']
+
+        lc_raw = alerce_client.query_lightcurve(oid, format='pandas')
+        time.sleep(0.1)
+
+        if lc_raw is None or len(lc_raw) == 0:
+            return True, oid, 0
+
+        if 'detections' in lc_raw.columns:
+            det_list = lc_raw['detections'].iloc[0]  # list of dicts
+            if not det_list:
+                return True, oid, 0
+            lc = pd.json_normalize(det_list)
+        elif 'fid' in lc_raw.columns:
+            lc = lc_raw  # already flat
+        else:
+            return True, oid, 0
+
+        if len(lc) == 0:
+            return True, oid, 0
+
+        lc['oid'] = oid
+        lc.to_csv(save_path, index=False)
+
+        n_bands = int(lc['fid'].nunique()) if 'fid' in lc.columns else 0
+        return True, oid, n_bands
+
+    except Exception as e:
+        print(f"  ZTF error for {source_name}: {e}")
+        return None, None, 0
+
+
+# =============================================================================
+# 7. OPTICAL CROSSMATCH — ATLAS (batch submit then poll)
+# =============================================================================
+
+def get_atlas_token():
+    """Fetches ATLAS forced photometry authorization token."""
+    payload = {"username": ATLAS_USER, "password": ATLAS_PASS}
+    headers = {"Content-Type": "application/x-www-form-urlencoded"}
+    status, body, _ = http_request("POST", f"{ATLAS_BASEURL}/api-token-auth/",
+                                   headers=headers, data=payload)
+    if status != 200:
+        raise RuntimeError(f"ATLAS authentication failed with status code: {status}")
+    return json.loads(body)["token"]
+
+
+def submit_atlas_job(ra, dec, token):
+    """
+    Submit a single ATLAS forced photometry job.
+    Returns the task URL string, or None if submission failed.
+    Does NOT poll — call collect_atlas_result separately.
+    """
+    headers = {"Authorization": f"Token {token}", "Accept": "application/json"}
+    payload = {
+        "ra": float(ra), "dec": float(dec),
+        "mjd_min": ATLAS_START_MJD,
+        "send_email": False
+    }
+    try:
+        status, body, _ = http_request(
+            "POST", f"{ATLAS_BASEURL}/queue/",
+            headers=headers, data=payload, timeout=30
+        )
+        if status == 201:
+            return json.loads(body)["url"]
+        print(f"    ATLAS submit returned status {status}")
+    except Exception as e:
+        print(f"    ATLAS submit error: {e}")
+    return None
+
+
+def collect_atlas_result(task_url, source_name, token, save_path):
+    """
+    Poll an already-submitted ATLAS job until it finishes, then save results.
+    Returns (found: bool|None, n_bands: int).
+    None = timed out or network error; False = queried, no detections.
+    """
+    print(f"    ATLAS polling URL: {task_url}")  
+    headers = {"Authorization": f"Token {token}", "Accept": "application/json"}
+
+    for attempt in range(120):  # poll up to 10 minutes (120 x 5s)
+        time.sleep(5)
+        try:
+            status, result_body, _ = http_request("GET", task_url, headers=headers, timeout=30)
+        except Exception as e:
+            print(f"    ATLAS poll error (attempt {attempt+1}) for {source_name}: {e}")
+            continue
+
+        if status != 200:
+            continue
+
+        result = json.loads(result_body)
+        if not result.get("finishtimestamp"):
+            continue
+
+        # Job finished
+        phot_url = result.get("result_url")
+        if not phot_url:
+            print(f"  ATLAS: job finished but no result_url for {source_name}")
+            return False, 0
+
+        try:
+            _, phot_text, _ = http_request("GET", phot_url, headers=headers, timeout=60)
+        except Exception as e:
+            print(f"  ATLAS: failed to fetch results for {source_name}: {e}")
+            return None, 0
+
+        df = pd.read_csv(StringIO(phot_text), sep=r'\s+', comment='#')  # ✅ fixed
+
+        if df.empty:
+            print(f"  ATLAS: empty result for {source_name}")
+            return False, 0
+
+        if 'uJy' in df.columns and 'duJy' in df.columns:
+            df = df[df['uJy'] / df['duJy'] > 3]
+
+        if len(df) == 0:
+            print(f"  ATLAS: no detections above S/N>3 for {source_name}")
+            return False, 0
+
+        df.to_csv(save_path, index=False)
+        n_bands = int(df['F'].nunique()) if 'F' in df.columns else 1
+        return True, n_bands
+
+    print(f"  ATLAS timed out for {source_name}")
+    return None, 0
+
+
+# =============================================================================
+# 8. CLASSIFICATION
+# =============================================================================
+
+def classify(row):
+    """
+    Gold:   >= 2 X-ray bands AND >= 2 optical bands
+    Silver: >= 1 X-ray band  AND >= 1 optical band (but not Gold)
+    Bronze: data in only one wavelength regime
+    """
+    xray_bands    = row['n_xray_bands']
+    optical_bands = row['n_optical_bands']
+
+    in_xray    = xray_bands > 0
+    in_optical = optical_bands > 0
+
+    if xray_bands >= 2 and optical_bands >= 2:
+        return 'Gold'
+    elif in_xray and in_optical:
+        return 'Silver'
+    elif in_xray or in_optical:
+        return 'Bronze'
+    else:
+        return 'No match'
+
+
+# =============================================================================
+# 9. MAIN PIPELINE — 3 phases
+# =============================================================================
+
+def run_pipeline():
+    maxi_df, swift_df = load_catalogs()
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    os.makedirs(os.path.join(LIGHTCURVE_DIR, "atlas"), exist_ok=True)
+    out_path = os.path.join(RESULTS_DIR, "crossmatch_results.csv")
+
+    try:
+        atlas_token = get_atlas_token()
+        print("ATLAS token obtained successfully.")
+    except Exception as e:
+        atlas_token = None
+        print(f"Warning: Could not get ATLAS token ({e}). ATLAS queries will be skipped.")
+
+    results    = []
+    atlas_jobs = {}  # source_name -> task_url (for batch polling in Phase 2)
+
+    # ── PHASE 1: X-ray + ZTF crossmatch, submit ATLAS jobs in background ─────
+    print("\n=== PHASE 1: X-ray + ZTF crossmatch + ATLAS job submission ===")
+
+    for i, row in maxi_df.iterrows():
+        name = row['Source Name']
+        ra   = row['RA J2000 Degs']
+        dec  = row['Dec J2000 Degs']
+
+        print(f"\n[{i+1}/{len(maxi_df)}] {name}  (RA={ra:.3f}, Dec={dec:.3f})")
+
+        # X-ray: MAXI
+        maxi_lc      = fetch_maxi_lightcurve(name, ra, dec)
+        n_maxi_bands = 2 if maxi_lc is not None and len(maxi_lc) > 0 else 0
+
+        has_outburst = False
+        if maxi_lc is not None and 'rate_4_10keV' in maxi_lc.columns:
+            has_outburst = detect_outburst(maxi_lc, 'rate_4_10keV', 'err_4_10keV')
+
+        # X-ray: Swift
+        swift_match, swift_sep = crossmatch_swift(ra, dec, swift_df)
+        swift_name    = swift_match['Source Name'] if swift_match is not None else None
+        n_swift_bands = 0
+        if swift_match is not None:
+            swift_lc      = fetch_swift_lightcurve(swift_name)
+            n_swift_bands = 1 if swift_lc is not None and len(swift_lc) > 0 else 0
+            print(f"  Swift match: {swift_name} ({swift_sep:.1f} arcsec)")
+        else:
+            print(f"  Swift: no match")
+
+        n_xray_bands = n_maxi_bands + n_swift_bands
+
+        # Optical: ZTF
+        ztf_found, ztf_oid, n_ztf_bands = query_ztf(ra, dec, name)
+        print(f"  ZTF: {'found' if ztf_found else 'not found'} ({n_ztf_bands} bands)")
+
+        # Optical: ATLAS — submit job now, collect results in Phase 2
+        atlas_save_path = os.path.join(LIGHTCURVE_DIR, "atlas", f"{name.replace(' ', '_')}.csv")
+        atlas_cached    = os.path.exists(atlas_save_path)
+
+        if not ztf_found and atlas_token and dec >= -50:
+            if atlas_cached:
+                print(f"  ATLAS: already cached")
+            else:
+                task_url = submit_atlas_job(ra, dec, atlas_token)
+                if task_url:
+                    atlas_jobs[name] = task_url
+                    print(f"  ATLAS: job submitted")
+                else:
+                    print(f"  ATLAS: submission failed")
+        elif ztf_found:
+            print(f"  ATLAS: skipped (ZTF data available)")
+        elif dec < -50:
+            print(f"  ATLAS: skipped (dec < -50)")
+
+        results.append({
+            'source_name'     : name,
+            'ra'              : ra,
+            'dec'             : dec,
+            'maxi_found'      : n_maxi_bands > 0,
+            'n_maxi_bands'    : n_maxi_bands,
+            'swift_match'     : swift_name,
+            'swift_sep_arcsec': swift_sep,
+            'n_swift_bands'   : n_swift_bands,
+            'n_xray_bands'    : n_xray_bands,
+            'has_outburst'    : has_outburst,
+            'ztf_found'       : ztf_found,
+            'ztf_oid'         : ztf_oid,
+            'n_ztf_bands'     : n_ztf_bands,
+            'atlas_found'     : None,        # filled in Phase 2
+            'n_atlas_bands'   : 0,
+            'n_optical_bands' : n_ztf_bands, # updated in Phase 2
+            'classification'  : None,        # filled in Phase 3
+        })
+
+    print(f"\n=== PHASE 1 complete. {len(atlas_jobs)} ATLAS jobs submitted. ===")
+    if atlas_jobs:
+        print("Waiting 30s before polling ATLAS results...")
+        time.sleep(30)
+
+# ── PHASE 2: Save ATLAS job URLs for standalone polling ───────────────────
+    print(f"\n=== PHASE 1 complete. {len(atlas_jobs)} ATLAS jobs submitted. ===")
+
+    jobs_path = os.path.join(RESULTS_DIR, "atlas_jobs.json")
+    with open(jobs_path, 'w') as f:
+        json.dump(atlas_jobs, f, indent=2)
+    print(f"ATLAS job URLs saved to {jobs_path}")
+    print("Run poll_atlas.py in a new terminal to collect ATLAS results.\n")
+
+    # Load any already-cached ATLAS results (from previous runs)
+    results_by_name = {r['source_name']: r for r in results}
+    for r in results:
+        if r['atlas_found'] is None:
+            atlas_save_path = os.path.join(
+                LIGHTCURVE_DIR, "atlas", f"{r['source_name'].replace(' ', '_')}.csv"
+            )
+            if os.path.exists(atlas_save_path):
+                df_a    = pd.read_csv(atlas_save_path)
+                n_bands = int(df_a['F'].nunique()) if 'F' in df_a.columns else 1
+                r['atlas_found']     = True
+                r['n_atlas_bands']   = n_bands
+                r['n_optical_bands'] += n_bands
+            else:
+                r['atlas_found']   = False
+                r['n_atlas_bands'] = 0
+
+    # ── PHASE 3: Classify all sources (ATLAS pending sources classified without it)
+    print("=== PHASE 3: Classifying sources ===")
+    for r in results:
+        r['classification'] = classify(pd.Series(r))
+        print(f"  {r['source_name']}: {r['classification']} "
+              f"| outburst={r['has_outburst']} "
+              f"| X-ray={r['n_xray_bands']} | optical={r['n_optical_bands']}")
+
+    # Save results — poll_atlas.py will update classifications once ATLAS is done
+    df = pd.DataFrame(results)
+    df.to_csv(out_path, index=False)
+
+    print("\n" + "="*60)
+    print("PIPELINE EXECUTION COMPLETE")
+    print("="*60)
+    print(f"\nTotal tracked targets: {len(df)}")
+    print("NOTE: ATLAS results are pending. Run poll_atlas.py to finalize classifications.")
+
+    print("\nOverall Tier Breakdowns (preliminary — ATLAS pending):")
+    print(df['classification'].value_counts().to_string())
+
+    print("\nCategorized Metrics (With Active Outbursts):")
+    outburst_df = df[df['has_outburst']]
+    if not outburst_df.empty:
+        print(outburst_df['classification'].value_counts().to_string())
+    else:
+        print("None detected")
+
+    print("\nCategorized Metrics (Without Active Outbursts):")
+    no_outburst_df = df[~df['has_outburst']]
+    if not no_outburst_df.empty:
+        print(no_outburst_df['classification'].value_counts().to_string())
+    else:
+        print("None detected")
+
+    print(f"\nSaved preliminary results to: {out_path}")
+    print(f"Run poll_atlas.py to collect ATLAS data and update classifications.")
+    return df
+
+
+if __name__ == "__main__":
+    run_pipeline()

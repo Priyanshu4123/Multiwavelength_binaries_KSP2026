@@ -7,3 +7,5 @@ Multiwave_KSP/test.py
 *pdf
 atlas_jobs.json
 Multiwave_KSP/cyg_x1_atlas.txt
+pipeline.py
+pipeline_2.py

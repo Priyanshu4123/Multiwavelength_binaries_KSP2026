@@ -1,0 +1,9 @@
+Multiwave_KSP/__pycache__/pipeline_2.cpython-314.pyc
+Multiwave_KSP/__pycache__/config.cpython-314.pyc
+Multiwave_KSP/__pycache__/pipeline_3.cpython-314.pyc
+Multiwave_KSP/test.py
+*venv
+*data
+*pdf
+atlas_jobs.json
+Multiwave_KSP/cyg_x1_atlas.txt
